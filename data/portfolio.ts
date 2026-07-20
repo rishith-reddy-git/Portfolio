@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, Camera, Code2, Cpu, Database, Palette, Sparkles, Users, GradCap, Trophy, Briefcase } from "lucide-react";
+import { BrainCircuit, Camera, Code2, Cpu, Database, Palette, Sparkles, Users, GraduationCap, Trophy, Briefcase } from "lucide-react";
 
 export type SkillGroup = { title: string; skills: string[] };
 
@@ -88,7 +88,7 @@ export const timelineEntries: TimelineEntry[] = [
     organization: "ENGINEERING UNIVERSITY / COLLEGE",
     description: "Specializing in Data Science, Artificial Intelligence, Software Engineering, and Database Management Systems with a focus on practical full-stack projects.",
     tags: ["COMPUTER SCIENCE", "AI & ML", "FULL STACK", "DATA STRUCTURES"],
-    icon: GradCap,
+    icon: GraduationCap,
   },
   {
     period: "2024",
