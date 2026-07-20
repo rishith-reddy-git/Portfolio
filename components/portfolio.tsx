@@ -307,11 +307,11 @@ export function Portfolio() {
                     <i key={tag}>{tag}</i>
                   ))}
                 </div>
-                <div style={{ display: "flex", gap: "12px", alignItems: "center", marginTop: "14px" }}>
+                <div style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "16px", flexWrap: "wrap" }}>
                   <button
                     onClick={() => setActiveProject(project)}
                     className="primary-button"
-                    style={{ padding: "7px 12px", fontSize: "11px", border: 0, cursor: "pointer" }}
+                    style={{ padding: "7px 14px", fontSize: "11px", border: 0, cursor: "pointer" }}
                   >
                     View Details <ArrowUpRight size={14} />
                   </button>
@@ -319,9 +319,29 @@ export function Portfolio() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ fontSize: "11px", fontWeight: 700, textDecoration: "none", display: "flex", gap: "5px", alignItems: "center", color: "var(--cyan)" }}
+                    className="resume-button"
+                    style={{ fontSize: "11px", fontWeight: 700, textDecoration: "none", display: "inline-flex", gap: "6px", alignItems: "center", padding: "6px 12px" }}
                   >
-                    <Github size={14} /> GitHub
+                    <Github size={14} /> GitHub Repo
+                  </a>
+                  <a
+                    href={`https://vercel.com/new/clone?repository-url=${encodeURIComponent(project.githubUrl)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      display: "inline-flex",
+                      gap: "6px",
+                      alignItems: "center",
+                      color: "#000",
+                      background: "#fff",
+                      padding: "6px 12px",
+                      borderRadius: "6px",
+                    }}
+                  >
+                    <span>🚀 Deploy Project</span>
                   </a>
                 </div>
               </div>

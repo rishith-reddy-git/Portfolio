@@ -148,6 +148,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 display: "flex",
                 gap: "12px",
                 justifyContent: "flex-end",
+                flexWrap: "wrap",
               }}
             >
               <a
@@ -158,21 +159,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 style={{ padding: "9px 16px", fontSize: "12px", gap: "8px", textDecoration: "none" }}
               >
                 <Github size={15} />
-                <span>Source Code</span>
+                <span>GitHub Repository</span>
               </a>
 
-              {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                  style={{ padding: "9px 16px", fontSize: "12px", gap: "8px", textDecoration: "none" }}
-                >
-                  <span>View Repository</span>
-                  <ArrowUpRight size={15} />
-                </a>
-              )}
+              <a
+                href={`https://vercel.com/new/clone?repository-url=${encodeURIComponent(project.githubUrl)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="primary-button"
+                style={{ padding: "9px 16px", fontSize: "12px", gap: "8px", textDecoration: "none" }}
+              >
+                <span>🚀 Deploy Project</span>
+                <ArrowUpRight size={15} />
+              </a>
             </div>
           </motion.div>
         </motion.div>
