@@ -51,7 +51,7 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
             <div
               className="command-head"
               style={{
-                justify: "space-between",
+                justifyContent: "space-between",
                 padding: "18px 22px",
                 borderBottom: "1px solid rgba(255,255,255,0.1)",
               }}

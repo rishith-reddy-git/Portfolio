@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, ExternalLink, Github, Layers, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Github, X } from "lucide-react";
 import { Project } from "../data/portfolio";
 
 interface ProjectModalProps {
