@@ -100,8 +100,8 @@ export const projects: Project[] = [
     summary: "An AI-powered behaviour prediction engine that reveals patterns, visualizes trends, and supports confident data-driven decisions.",
     tags: ["Python", "Analytics", "ML"],
     accent: "violet",
-    githubUrl: "https://github.com/rishith-reddy-git/MANOVRA",
-    demoUrl: "https://github.com/rishith-reddy-git/MANOVRA",
+    githubUrl: "https://github.com/rishith-reddy-git/Manovra_behaviour_prediction",
+    demoUrl: "https://github.com/rishith-reddy-git/Manovra_behaviour_prediction",
     description: "MANOVRA is a predictive engine designed to process complex behavioural data signals, compute trend vectors, and present real-time actionable intelligence dashboards.",
     highlights: [
       "Real-time machine learning prediction pipeline",
