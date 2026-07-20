@@ -64,6 +64,24 @@ export const skillGroups: SkillGroup[] = [
 
 export const timelineEntries: TimelineEntry[] = [
   {
+    period: "2024 — PRESENT",
+    category: "ACHIEVEMENT",
+    role: "Selected Cohort Member",
+    organization: "NASSCOM thingQubator PROGRAM",
+    description: "Selected for the prestigious NASSCOM thingQubator innovation and incubation program — focusing on product development, AI prototyping, and startup mentoring.",
+    tags: ["NASSCOM", "thingQubator", "INCUBATION", "AI INNOVATION"],
+    icon: Trophy,
+  },
+  {
+    period: "PRESENT",
+    category: "ACHIEVEMENT",
+    role: "Technical Student FDT Mentor",
+    organization: "FDT MENTORSHIP PROGRAM",
+    description: "Serving as a Technical Student FDT Mentor — guiding peers through full-stack development challenges, software architecture, code reviews, and project implementation.",
+    tags: ["TECHNICAL MENTORSHIP", "CODE REVIEWS", "TEACHING", "FULL STACK"],
+    icon: GraduationCap,
+  },
+  {
     period: "2026 — PRESENT",
     category: "LEADERSHIP",
     role: "Lead, Photography & Videography Department",
@@ -80,15 +98,6 @@ export const timelineEntries: TimelineEntry[] = [
     description: "Specializing in Data Science, Artificial Intelligence, Software Engineering, and Database Management Systems with a focus on practical full-stack projects.",
     tags: ["COMPUTER SCIENCE", "AI & ML", "FULL STACK", "DATA STRUCTURES"],
     icon: GraduationCap,
-  },
-  {
-    period: "2024",
-    category: "ACHIEVEMENT",
-    role: "Hackathon & Project Recognition",
-    organization: "INNOVATION & HACKATHON EVENTS",
-    description: "Built and pitched AI-driven software concepts, receiving accolades for user-centric design, real-time analytics integration, and execution speed.",
-    tags: ["HACKATHON", "AI INNOVATION", "PITCHING", "PROTOTYPING"],
-    icon: Trophy,
   },
 ];
 
@@ -151,6 +160,26 @@ export const resumeData: ResumeSection[] = [
         details: [
           "Directing creative media operations, leading a multi-member team of photographers, videographers, and graphic designers.",
           "Producing end-to-end promotional material, event recaps, and brand identities for flagship campus hackathons and startup conclaves."
+        ]
+      },
+      {
+        heading: "Technical Student FDT Mentor",
+        subheading: "FDT Mentorship Program",
+        period: "Present",
+        details: [
+          "Mentoring student developers in full-stack architecture, code quality, software design, and project execution."
+        ]
+      }
+    ]
+  },
+  {
+    title: "Key Achievements & Incubation",
+    items: [
+      {
+        heading: "Selected Cohort Member — NASSCOM thingQubator Program",
+        period: "2024 — Present",
+        details: [
+          "Currently selected for the prestigious NASSCOM thingQubator program focusing on AI prototyping, innovation, and startup incubation."
         ]
       }
     ]
