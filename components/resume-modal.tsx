@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Download, FileText, X, Check, Mail, Github, Linkedin } from "lucide-react";
+import { Download, FileText, X, Check, Mail, Github, Linkedin, Instagram } from "lucide-react";
 import { resumeData, socialLinks } from "../data/portfolio";
 import { useState } from "react";
 
@@ -151,6 +151,14 @@ export function ResumeModal({ open, onClose }: ResumeModalProps) {
                     style={{ display: "flex", alignItems: "center", gap: "5px", color: "#9da6b9", textDecoration: "none" }}
                   >
                     <Linkedin size={13} /> LinkedIn
+                  </a>
+                  <a
+                    href={socialLinks.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ display: "flex", alignItems: "center", gap: "5px", color: "#9da6b9", textDecoration: "none" }}
+                  >
+                    <Instagram size={13} /> Instagram
                   </a>
                 </div>
               </div>

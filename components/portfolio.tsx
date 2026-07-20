@@ -122,6 +122,33 @@ export function Portfolio() {
           ))}
         </nav>
         <div className="nav-actions">
+          <a
+            href={socialLinks.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#bdc5d4", display: "flex", alignItems: "center", padding: "6px", transition: "color 0.2s" }}
+            aria-label="LinkedIn Profile"
+          >
+            <Linkedin size={16} />
+          </a>
+          <a
+            href={socialLinks.instagram}
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#bdc5d4", display: "flex", alignItems: "center", padding: "6px", transition: "color 0.2s" }}
+            aria-label="Instagram Profile"
+          >
+            <Instagram size={16} />
+          </a>
+          <a
+            href={socialLinks.github}
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "#bdc5d4", display: "flex", alignItems: "center", padding: "6px", transition: "color 0.2s" }}
+            aria-label="GitHub Profile"
+          >
+            <Github size={16} />
+          </a>
           <button className="command-button" onClick={() => setCommandOpen(true)} aria-label="Open quick navigation">
             <Command size={15} />
             <span>Menu (⌘K)</span>
@@ -156,13 +183,33 @@ export function Portfolio() {
           <motion.p variants={reveal} className="hero-description">
             Building intelligent software, creating impactful digital experiences, and leading innovation through technology.
           </motion.p>
-          <motion.div variants={reveal} className="hero-buttons">
+          <motion.div variants={reveal} className="hero-buttons" style={{ flexWrap: "wrap" }}>
             <a className="primary-button" href="#projects">
               Explore projects <ArrowDown size={16} />
             </a>
             <button className="quiet-button" onClick={() => setResumeOpen(true)} style={{ background: "transparent", border: 0, color: "inherit", cursor: "pointer" }}>
               View Résumé <ArrowUpRight size={15} />
             </button>
+            <div style={{ display: "flex", gap: "8px", alignItems: "center", marginLeft: "6px" }}>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="resume-button"
+                style={{ padding: "8px 12px", fontSize: "11px", textDecoration: "none" }}
+              >
+                <Linkedin size={14} /> LinkedIn
+              </a>
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="resume-button"
+                style={{ padding: "8px 12px", fontSize: "11px", textDecoration: "none" }}
+              >
+                <Instagram size={14} /> Instagram
+              </a>
+            </div>
           </motion.div>
         </motion.div>
 
