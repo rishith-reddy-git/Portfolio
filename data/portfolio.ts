@@ -77,9 +77,27 @@ export const timelineEntries: TimelineEntry[] = [
     category: "ACHIEVEMENT",
     role: "Technical Student FDT Mentor",
     organization: "FDT MENTORSHIP PROGRAM",
-    description: "Serving as a Technical Student FDT Mentor — guiding peers through full-stack development challenges, software architecture, code reviews, and project implementation.",
-    tags: ["TECHNICAL MENTORSHIP", "CODE REVIEWS", "TEACHING", "FULL STACK"],
+    description: "Serving as a Technical Student FDT Mentor — mentored 50+ students across 5+ real-world full-stack software projects, guiding them through architecture, code reviews, and deployment workflows.",
+    tags: ["50+ STUDENTS MENTORED", "5+ PROJECTS", "CODE REVIEWS", "FULL STACK"],
     icon: GraduationCap,
+  },
+  {
+    period: "2026",
+    category: "LEADERSHIP",
+    role: "Volunteer — TEDx Sreyas 2026",
+    organization: "TEDx SREYAS",
+    description: "Volunteered for TEDx Sreyas 2026 — supporting stage logistics, speaker operations, visual media production, and attendee experience.",
+    tags: ["TEDx 2026", "TEDx SREYAS", "VOLUNTEER", "EVENT LOGISTICS"],
+    icon: Users,
+  },
+  {
+    period: "2025",
+    category: "LEADERSHIP",
+    role: "Volunteer — Smart India Hackathon (SIH 2025)",
+    organization: "SREYAS INSTITUTE OF ENGINEERING & TECHNOLOGY",
+    description: "Volunteered for Smart India Hackathon (SIH 2025) hosted at Sreyas — coordinating participating teams, technical infrastructure setup, and event operations.",
+    tags: ["SIH 2025", "SMART INDIA HACKATHON", "VOLUNTEER", "HACKATHON LOGISTICS"],
+    icon: Users,
   },
   {
     period: "2026 — PRESENT",
@@ -167,7 +185,23 @@ export const resumeData: ResumeSection[] = [
         subheading: "FDT Mentorship Program",
         period: "Present",
         details: [
-          "Mentoring student developers in full-stack architecture, code quality, software design, and project execution."
+          "Mentored 50+ students across 5+ real-world full-stack software projects, guiding them in software architecture, code quality, and deployment."
+        ]
+      },
+      {
+        heading: "Volunteer — TEDx Sreyas 2026",
+        subheading: "TEDx Sreyas",
+        period: "2026",
+        details: [
+          "Coordinated stage logistics, media production, speaker management, and attendee flow for TEDx Sreyas 2026."
+        ]
+      },
+      {
+        heading: "Volunteer — Smart India Hackathon (SIH 2025)",
+        subheading: "Sreyas Institute of Engineering & Technology",
+        period: "2025",
+        details: [
+          "Supported hackathon logistics, hardware setup, participant assistance, and technical operations for SIH 2025 at Sreyas."
         ]
       }
     ]
