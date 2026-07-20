@@ -75,13 +75,15 @@ export function Portfolio() {
   const [sent, setSent] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % heroHighlights.length);
-    }, 3800);
+    }, 4200);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused]);
 
   useEffect(() => {
     const openCommand = (event: KeyboardEvent) => {
@@ -221,73 +223,140 @@ export function Portfolio() {
           </motion.div>
         </motion.div>
 
-        <motion.aside className="hero-card" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.65, duration: 0.7 }} style={{ width: "290px", minHeight: "250px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span className="card-top" style={{ color: "var(--cyan)", fontSize: "9px", fontFamily: "var(--font-mono)", letterSpacing: "1px" }}>
-              {heroHighlights[slideIndex].badge}
-            </span>
-            <div style={{ display: "flex", gap: "4px" }}>
-              <button
-                onClick={() => setSlideIndex((slideIndex - 1 + heroHighlights.length) % heroHighlights.length)}
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid var(--line)", borderRadius: "4px", color: "#fff", padding: "2px 5px", cursor: "pointer", display: "flex" }}
-                aria-label="Previous highlight"
-              >
-                <ChevronLeft size={12} />
-              </button>
-              <button
-                onClick={() => setSlideIndex((slideIndex + 1) % heroHighlights.length)}
-                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid var(--line)", borderRadius: "4px", color: "#fff", padding: "2px 5px", cursor: "pointer", display: "flex" }}
-                aria-label="Next highlight"
-              >
-                <ChevronRight size={12} />
-              </button>
+        <motion.aside
+          className="hero-card"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.65, duration: 0.7 }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          style={{
+            width: "min(90vw, 360px)",
+            minHeight: "310px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "24px",
+            background: `radial-gradient(circle at 80% 20%, ${heroHighlights[slideIndex].accentGlow}, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02))`,
+            transition: "background 0.5s ease",
+            borderColor: "rgba(255,255,255,0.18)",
+          }}
+        >
+          {/* Header Bar: Badge & Navigation Controls */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
+              <span className="card-top" style={{ color: heroHighlights[slideIndex].color, fontSize: "10px", fontFamily: "var(--font-mono)", letterSpacing: "1.2px", fontWeight: 600 }}>
+                {heroHighlights[slideIndex].badge}
+              </span>
+              <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+                <span style={{ fontSize: "10px", fontFamily: "var(--font-mono)", color: "var(--muted)", marginRight: "4px" }}>
+                  0{slideIndex + 1} / 0{heroHighlights.length}
+                </span>
+                <button
+                  onClick={() => setSlideIndex((slideIndex - 1 + heroHighlights.length) % heroHighlights.length)}
+                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid var(--line)", borderRadius: "6px", color: "#fff", padding: "4px 6px", cursor: "pointer", display: "flex" }}
+                  aria-label="Previous highlight"
+                >
+                  <ChevronLeft size={14} />
+                </button>
+                <button
+                  onClick={() => setSlideIndex((slideIndex + 1) % heroHighlights.length)}
+                  style={{ background: "rgba(255,255,255,0.08)", border: "1px solid var(--line)", borderRadius: "6px", color: "#fff", padding: "4px 6px", cursor: "pointer", display: "flex" }}
+                  aria-label="Next highlight"
+                >
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Interactive Category Selector Tabs */}
+            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "16px" }}>
+              {heroHighlights.map((item, idx) => (
+                <button
+                  key={item.category}
+                  onClick={() => setSlideIndex(idx)}
+                  style={{
+                    background: idx === slideIndex ? item.color : "rgba(255,255,255,0.06)",
+                    color: idx === slideIndex ? "#080b16" : "#cbd5e1",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "6px",
+                    padding: "4px 9px",
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    fontFamily: "var(--font-mono)",
+                    cursor: "pointer",
+                    transition: "all 0.25s",
+                  }}
+                >
+                  {item.category}
+                </button>
+              ))}
             </div>
           </div>
 
+          {/* Animated Main Content Body */}
           <AnimatePresence mode="wait">
             <motion.div
               key={slideIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: 12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -12, scale: 0.98 }}
               transition={{ duration: 0.35 }}
-              style={{ margin: "12px 0" }}
+              style={{ margin: "6px 0" }}
             >
-              <div style={{ fontSize: "30px", fontWeight: 700, fontFamily: "var(--font-space)", color: "#c4b5fd", letterSpacing: "-1.5px", lineHeight: "1" }}>
+              <div style={{ fontSize: "40px", fontWeight: 800, fontFamily: "var(--font-space)", color: heroHighlights[slideIndex].color, letterSpacing: "-2px", lineHeight: "1" }}>
                 {heroHighlights[slideIndex].stat}
               </div>
-              <h3 style={{ fontSize: "15px", fontWeight: 600, margin: "8px 0 4px", color: "#ffffff", letterSpacing: "-0.5px" }}>
+              <h3 style={{ fontSize: "17px", fontWeight: 700, margin: "10px 0 6px", color: "#ffffff", letterSpacing: "-0.5px" }}>
                 {heroHighlights[slideIndex].title}
               </h3>
-              <p style={{ fontSize: "11px", color: "var(--muted)", margin: 0, lineHeight: "1.5" }}>
+              <p style={{ fontSize: "12px", color: "#cbd5e1", margin: 0, lineHeight: "1.6" }}>
                 {heroHighlights[slideIndex].copy}
               </p>
             </motion.div>
           </AnimatePresence>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "10px", marginTop: "6px" }}>
-            <div style={{ display: "flex", gap: "5px" }}>
+          {/* Card Footer: Action Jump & Indicators */}
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "14px", marginTop: "10px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <a
+              href={`#${heroHighlights[slideIndex].targetId}`}
+              style={{
+                fontSize: "11px",
+                fontWeight: 700,
+                color: "#ffffff",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                background: "rgba(255,255,255,0.08)",
+                padding: "6px 12px",
+                borderRadius: "6px",
+                border: "1px solid rgba(255,255,255,0.15)",
+                transition: "all 0.2s",
+              }}
+            >
+              {heroHighlights[slideIndex].actionText} <ArrowUpRight size={13} />
+            </a>
+
+            <div style={{ display: "flex", gap: "6px" }}>
               {heroHighlights.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSlideIndex(idx)}
                   style={{
-                    width: idx === slideIndex ? "16px" : "6px",
-                    height: "5px",
+                    width: idx === slideIndex ? "22px" : "6px",
+                    height: "6px",
                     borderRadius: "3px",
-                    background: idx === slideIndex ? "var(--cyan)" : "rgba(255,255,255,0.2)",
+                    background: idx === slideIndex ? heroHighlights[slideIndex].color : "rgba(255,255,255,0.2)",
                     border: 0,
                     padding: 0,
                     cursor: "pointer",
-                    transition: "all 0.3s",
+                    transition: "all 0.3s ease",
                   }}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
             </div>
-            <span style={{ fontSize: "9px", fontFamily: "var(--font-mono)", color: "var(--cyan)" }}>
-              {heroHighlights[slideIndex].tag}
-            </span>
           </div>
         </motion.aside>
 

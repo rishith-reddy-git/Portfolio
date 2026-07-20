@@ -122,31 +122,51 @@ export const timelineEntries: TimelineEntry[] = [
 export const heroHighlights = [
   {
     badge: "MENTORSHIP HIGHLIGHT",
+    category: "Mentorship",
     stat: "50+ Students",
     title: "Technical Student FDT Mentor",
-    copy: "Mentored 50+ students across full-stack development, code reviews, and project implementation.",
-    tag: "FDT MENTOR"
+    copy: "Mentored 50+ students across full-stack development, code reviews, software architecture, and live project implementation.",
+    tag: "FDT MENTOR",
+    color: "#a78bfa",
+    accentGlow: "rgba(167, 139, 250, 0.18)",
+    actionText: "View Mentorship Specs",
+    targetId: "experience"
   },
   {
     badge: "PROJECT METRIC",
+    category: "Projects",
     stat: "5+ Projects",
     title: "Full-Stack Project Guidance",
-    copy: "Guided 5+ student software projects from initial architecture to live deployment.",
-    tag: "FULL STACK"
+    copy: "Guided 5+ student software projects from initial concept and UI design to production deployment.",
+    tag: "FULL STACK",
+    color: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.18)",
+    actionText: "Explore Projects",
+    targetId: "projects"
   },
   {
     badge: "INCUBATION HIGHLIGHT",
+    category: "Incubation",
     stat: "2026 Cohort",
     title: "NASSCOM thingQubator Program",
     copy: "Selected for the prestigious NASSCOM thingQubator innovation and incubation program.",
-    tag: "NASSCOM"
+    tag: "NASSCOM",
+    color: "#f43f5e",
+    accentGlow: "rgba(244, 63, 94, 0.18)",
+    actionText: "View Journey",
+    targetId: "experience"
   },
   {
     badge: "FEATURED AI WORK",
+    category: "AI Engine",
     stat: "MANOVRA",
     title: "AI Behaviour Prediction Engine",
     copy: "Real-time telemetry and predictive ML dashboard built with Python, ML, and React.",
-    tag: "AI / ML"
+    tag: "AI / ML",
+    color: "#34d399",
+    accentGlow: "rgba(52, 211, 153, 0.18)",
+    actionText: "Open MANOVRA",
+    targetId: "projects"
   }
 ];
 
