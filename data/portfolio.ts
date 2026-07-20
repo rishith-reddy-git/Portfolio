@@ -29,15 +29,6 @@ export type TimelineEntry = {
   icon: LucideIcon;
 };
 
-export type GalleryItem = {
-  label: string;
-  kind: string;
-  tone: string;
-  tools: string[];
-  description: string;
-  location?: string;
-};
-
 export type ResumeSection = {
   title: string;
   items: {
@@ -55,7 +46,7 @@ export const socialLinks = {
   email: "soodinirishithreddy@gmail.com",
 };
 
-export const navigation = ["Home", "About", "Experience", "Skills", "Projects", "Gallery", "Contact"];
+export const navigation = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
 
 export const focusAreas: Focus[] = [
   { icon: BrainCircuit, title: "Intelligence", copy: "Machine learning and predictive systems that transform signals into useful decisions." },
@@ -82,7 +73,7 @@ export const timelineEntries: TimelineEntry[] = [
     icon: Briefcase,
   },
   {
-    period: "2023 — 2027",
+    period: "2024 — PRESENT",
     category: "EDUCATION",
     role: "B.Tech in Computer Science & Engineering",
     organization: "ENGINEERING UNIVERSITY / COLLEGE",
@@ -119,108 +110,6 @@ export const projects: Project[] = [
     ],
     techStack: ["Python", "Scikit-Learn", "Pandas", "React", "FastAPI"]
   },
-  {
-    number: "02",
-    title: "AI Resume Analyzer",
-    type: "AI / Product concept",
-    summary: "A focused workflow for turning resumes into clearer, more actionable career insights and structural feedback.",
-    tags: ["NLP", "React", "UX"],
-    accent: "blue",
-    githubUrl: "https://github.com/rishith-reddy-git/AI-Resume-Analyzer",
-    demoUrl: "https://github.com/rishith-reddy-git/AI-Resume-Analyzer",
-    description: "AI Resume Analyzer parses resume text using Natural Language Processing to score job suitability, highlight missing key skills, and generate tailored resume improvements.",
-    highlights: [
-      "Natural Language Processing parsing engine",
-      "Keyword gap analysis against target job roles",
-      "Instant formatting and structural suggestions"
-    ],
-    techStack: ["React", "TypeScript", "Python", "NLP", "Tailwind CSS"]
-  },
-  {
-    number: "03",
-    title: "Hackathon Management",
-    type: "Platform / Systems",
-    summary: "A purpose-built platform for organizing people, projects, and momentum around innovation events.",
-    tags: ["Full stack", "Events", "APIs"],
-    accent: "cyan",
-    githubUrl: "https://github.com/rishith-reddy-git/Hackathon-Management",
-    demoUrl: "https://github.com/rishith-reddy-git/Hackathon-Management",
-    description: "A comprehensive management portal for hackathon organizers, participants, and judges — streamlining team registration, submission tracking, and live leaderboards.",
-    highlights: [
-      "Role-based authentication for participants, judges, and admins",
-      "Automated team matching and submission tracking",
-      "Live scoring leaderboards and announcement broadcast"
-    ],
-    techStack: ["Next.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"]
-  },
-  {
-    number: "04",
-    title: "Student Analytics",
-    type: "Data / Dashboard",
-    summary: "A decision surface for understanding academic engagement and identifying useful next actions.",
-    tags: ["Data", "Dashboards", "Insights"],
-    accent: "amber",
-    githubUrl: "https://github.com/rishith-reddy-git/Student-Analytics",
-    demoUrl: "https://github.com/rishith-reddy-git/Student-Analytics",
-    description: "An analytics dashboard enabling educators and students to track learning velocity, identify early drop-off indicators, and personalize intervention plans.",
-    highlights: [
-      "Interactive engagement charts and heatmaps",
-      "Early warning alert triggers for struggling metrics",
-      "Exportable progress reporting for academic advisors"
-    ],
-    techStack: ["Python", "SQL", "TypeScript", "React", "Chart.js"]
-  },
-];
-
-export const gallery: GalleryItem[] = [
-  {
-    label: "Innovation in motion",
-    kind: "Events",
-    tone: "indigo",
-    tools: ["Sony A7IV", "Lightroom", "Premiere Pro"],
-    description: "Capturing high-energy hackathons, keynote speeches, and live product demos at the Center for Innovation & Entrepreneurship.",
-    location: "Center for Innovation & Entrepreneurship"
-  },
-  {
-    label: "Human stories",
-    kind: "Photography",
-    tone: "violet",
-    tools: ["35mm Prime", "Lightroom Classic"],
-    description: "Candid portraits documenting founders, developers, and creators sharing raw insights during workshop breaks.",
-    location: "Startup Conclave"
-  },
-  {
-    label: "Ideas in the room",
-    kind: "Workshops",
-    tone: "blue",
-    tools: ["Sony A7IV", "Figma"],
-    description: "Visual documentation of design sprints, whiteboarding sessions, and architecture brainstorming.",
-    location: "Tech Campus Labs"
-  },
-  {
-    label: "Built together",
-    kind: "Team moments",
-    tone: "cyan",
-    tools: ["Lightroom Mobile", "Canva"],
-    description: "Highlighting collaborative energy, late-night hackathon builds, and team celebration milestones.",
-    location: "Hackathon Arena"
-  },
-  {
-    label: "Momentum",
-    kind: "Hackathons",
-    tone: "purple",
-    tools: ["Sony A7IV", "Gimbal", "Premiere Pro"],
-    description: "Dynamic video recaps and promotional trailers produced for major regional tech competitions.",
-    location: "Innovation Hub"
-  },
-  {
-    label: "The craft",
-    kind: "Videography",
-    tone: "slate",
-    tools: ["DaVinci Resolve", "Sony Cinema Line"],
-    description: "Cinematic short films and branded video packages highlighting student-led startup launches.",
-    location: "Creative Studio"
-  },
 ];
 
 export const stats = [
@@ -244,7 +133,7 @@ export const resumeData: ResumeSection[] = [
       {
         heading: "B.Tech in Computer Science & Engineering",
         subheading: "Focus on AI, Data Science & Full-Stack Development",
-        period: "2023 — 2027",
+        period: "2024 — Present",
         details: [
           "Relevant Coursework: Machine Learning, Data Structures & Algorithms, Database Systems, Web Development, Object-Oriented Programming.",
           "Active leader at the Center for Innovation & Entrepreneurship (CIE)."
@@ -273,18 +162,6 @@ export const resumeData: ResumeSection[] = [
         heading: "MANOVRA — AI Behaviour Prediction Engine",
         details: [
           "Built a predictive telemetry pipeline in Python & Scikit-Learn with real-time interactive trend visualization."
-        ]
-      },
-      {
-        heading: "AI Resume Analyzer",
-        details: [
-          "Engineered an NLP-powered parsing tool that scores resumes against target job descriptions and generates instant structural advice."
-        ]
-      },
-      {
-        heading: "Hackathon Management Platform",
-        details: [
-          "Developed a full-stack web application with role-based dashboard access, automated team management, and live leaderboards."
         ]
       }
     ]

@@ -1,9 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Check, Command, Github, Instagram, Linkedin, Mail, Menu, Send, Sparkles, X, Camera, MapPin, Wrench } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, Command, Github, Instagram, Linkedin, Mail, Menu, Send, Sparkles, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
-import { focusAreas, gallery, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project } from "../data/portfolio";
+import { focusAreas, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project } from "../data/portfolio";
 import { ResumeModal } from "./resume-modal";
 import { ProjectModal } from "./project-modal";
 
@@ -72,7 +72,6 @@ export function Portfolio() {
   const [commandOpen, setCommandOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const [lightbox, setLightbox] = useState<number | null>(null);
   const [sent, setSent] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -280,7 +279,7 @@ export function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="section projects">
         <SectionTitle eyebrow="04 / SELECTED WORK" title="Ideas, built into" emphasis="impact." />
-        <div className="project-grid">
+        <div className="project-grid" style={{ gridTemplateColumns: "1fr" }}>
           {projects.map((project, index) => (
             <motion.article
               className={`project-card ${project.accent}`}
@@ -331,34 +330,10 @@ export function Portfolio() {
         </div>
       </section>
 
-      {/* Visual Stories Gallery Section */}
-      <section id="gallery" className="section gallery">
-        <SectionTitle eyebrow="05 / VISUAL STORIES" title="The work behind" emphasis="the work." />
-        <div className="gallery-grid">
-          {gallery.map((item, index) => (
-            <motion.button
-              key={item.label}
-              className={`gallery-item ${item.tone}`}
-              onClick={() => setLightbox(index)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={reveal}
-              aria-label={`Open ${item.label}`}
-            >
-              <span>{item.kind}</span>
-              <strong>{item.label}</strong>
-              <div className="gallery-orb" />
-              <ArrowUpRight size={18} />
-            </motion.button>
-          ))}
-        </div>
-      </section>
-
       {/* Focus / Impact Section */}
       <section className="section impact">
         <p className="eyebrow">
-          <span />06 / MOMENTUM
+          <span />05 / MOMENTUM
         </p>
         <div>
           {focusAreas.map(({ icon: Icon, title, copy }) => (
@@ -373,7 +348,7 @@ export function Portfolio() {
 
       {/* Contact Section */}
       <section id="contact" className="section contact">
-        <SectionTitle eyebrow="07 / CONTACT" title="Have an idea worth" emphasis="making?" />
+        <SectionTitle eyebrow="06 / CONTACT" title="Have an idea worth" emphasis="making?" />
         <div className="contact-layout">
           <div>
             <p>Open to thoughtful conversations, ambitious collaborations, and problems worth solving.</p>
@@ -454,33 +429,6 @@ export function Portfolio() {
 
       {/* Interactive Project Details Modal */}
       <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
-
-      {/* Gallery Lightbox */}
-      <AnimatePresence>
-        {lightbox !== null && (
-          <motion.div className="lightbox" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(null)}>
-            <motion.div initial={{ scale: 0.94 }} animate={{ scale: 1 }} onClick={(event) => event.stopPropagation()} className={`lightbox-art ${gallery[lightbox].tone}`}>
-              <button onClick={() => setLightbox(null)} aria-label="Close gallery item">
-                <X />
-              </button>
-              <span>{gallery[lightbox].kind}</span>
-              <h2>{gallery[lightbox].label}</h2>
-              <p style={{ marginTop: "10px", color: "#e2e8f0", maxWidth: "480px", fontSize: "13px" }}>{gallery[lightbox].description}</p>
-              
-              <div style={{ position: "absolute", bottom: "18px", right: "24px", display: "flex", gap: "12px", fontSize: "11px", color: "var(--cyan)", fontFamily: "var(--font-mono)" }}>
-                {gallery[lightbox].location && (
-                  <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                    <MapPin size={12} /> {gallery[lightbox].location}
-                  </span>
-                )}
-                <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                  <Wrench size={12} /> {gallery[lightbox].tools.join(", ")}
-                </span>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </main>
   );
 }
