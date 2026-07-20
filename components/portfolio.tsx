@@ -173,7 +173,7 @@ export function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="hero">
+      <section id="home" className="hero" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "60px", flexWrap: "wrap", zIndex: 1 }}>
         <div className="hero-grid" />
         <div className="cursor-glow" />
         <motion.div className="hero-copy" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.12 } } }}>
@@ -223,6 +223,7 @@ export function Portfolio() {
           </motion.div>
         </motion.div>
 
+        {/* Floating Borderless Highlight Showcase */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -231,19 +232,20 @@ export function Portfolio() {
           onMouseLeave={() => setIsPaused(false)}
           style={{
             position: "relative",
-            width: "min(92vw, 420px)",
-            borderRadius: "24px",
+            width: "min(92vw, 400px)",
+            borderRadius: "28px",
             padding: "26px",
-            background: "rgba(255, 255, 255, 0.035)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
-            border: "1px solid rgba(255, 255, 255, 0.14)",
-            boxShadow: `0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 40px ${heroHighlights[slideIndex].accentGlow}`,
+            background: `radial-gradient(circle at 50% 0%, ${heroHighlights[slideIndex].accentGlow}, transparent 75%), rgba(255, 255, 255, 0.025)`,
+            backdropFilter: "blur(30px)",
+            WebkitBackdropFilter: "blur(30px)",
+            border: "none",
+            outline: "none",
+            boxShadow: "none",
             transition: "all 0.5s ease",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            minHeight: "300px",
+            minHeight: "290px",
           }}
         >
           {/* Animated 3-Second Cycle Progress Bar */}
@@ -281,7 +283,7 @@ export function Portfolio() {
                 style={{
                   background: idx === slideIndex ? item.color : "rgba(255, 255, 255, 0.06)",
                   color: idx === slideIndex ? "#050814" : "#cbd5e1",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  border: "none",
                   borderRadius: "20px",
                   padding: "6px 13px",
                   fontSize: "11px",
