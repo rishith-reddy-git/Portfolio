@@ -41,8 +41,8 @@ export type ResumeSection = {
 
 export const socialLinks = {
   github: "https://github.com/rishith-reddy-git",
-  linkedin: "https://www.linkedin.com/in/soodini-rishith-reddy/",
-  instagram: "https://instagram.com/rishithreddy",
+  linkedin: "https://www.linkedin.com/in/rishith-reddy-soodini-510549328/",
+  instagram: "https://www.instagram.com/_rishithreddy_23/?hl=en",
   email: "soodinirishithreddy@gmail.com",
 };
 
