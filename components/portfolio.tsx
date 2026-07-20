@@ -1,9 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Check, Command, Github, Instagram, Linkedin, Mail, Menu, Send, Sparkles, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, ChevronLeft, ChevronRight, Command, Github, Instagram, Linkedin, Mail, Menu, Send, Sparkles, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
-import { focusAreas, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project } from "../data/portfolio";
+import { focusAreas, heroHighlights, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project } from "../data/portfolio";
 import { ResumeModal } from "./resume-modal";
 import { ProjectModal } from "./project-modal";
 
@@ -74,6 +74,14 @@ export function Portfolio() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [sent, setSent] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % heroHighlights.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const openCommand = (event: KeyboardEvent) => {
@@ -213,21 +221,74 @@ export function Portfolio() {
           </motion.div>
         </motion.div>
 
-        <motion.aside className="hero-card" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.65, duration: 0.7 }}>
-          <span className="card-top">CURRENT FOCUS</span>
-          <div className="orbit">
-            <div />
-            <div />
-            <b>AI</b>
+        <motion.aside className="hero-card" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.65, duration: 0.7 }} style={{ width: "290px", minHeight: "250px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span className="card-top" style={{ color: "var(--cyan)", fontSize: "9px", fontFamily: "var(--font-mono)", letterSpacing: "1px" }}>
+              {heroHighlights[slideIndex].badge}
+            </span>
+            <div style={{ display: "flex", gap: "4px" }}>
+              <button
+                onClick={() => setSlideIndex((slideIndex - 1 + heroHighlights.length) % heroHighlights.length)}
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid var(--line)", borderRadius: "4px", color: "#fff", padding: "2px 5px", cursor: "pointer", display: "flex" }}
+                aria-label="Previous highlight"
+              >
+                <ChevronLeft size={12} />
+              </button>
+              <button
+                onClick={() => setSlideIndex((slideIndex + 1) % heroHighlights.length)}
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid var(--line)", borderRadius: "4px", color: "#fff", padding: "2px 5px", cursor: "pointer", display: "flex" }}
+                aria-label="Next highlight"
+              >
+                <ChevronRight size={12} />
+              </button>
+            </div>
           </div>
-          <h2>
-            Ideas that<br />
-            <em>move people.</em>
-          </h2>
-          <p>
-            Lead, Photography & Videography Department<br />
-            Center for Innovation & Entrepreneurship
-          </p>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={slideIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35 }}
+              style={{ margin: "12px 0" }}
+            >
+              <div style={{ fontSize: "30px", fontWeight: 700, fontFamily: "var(--font-space)", color: "#c4b5fd", letterSpacing: "-1.5px", lineHeight: "1" }}>
+                {heroHighlights[slideIndex].stat}
+              </div>
+              <h3 style={{ fontSize: "15px", fontWeight: 600, margin: "8px 0 4px", color: "#ffffff", letterSpacing: "-0.5px" }}>
+                {heroHighlights[slideIndex].title}
+              </h3>
+              <p style={{ fontSize: "11px", color: "var(--muted)", margin: 0, lineHeight: "1.5" }}>
+                {heroHighlights[slideIndex].copy}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "10px", marginTop: "6px" }}>
+            <div style={{ display: "flex", gap: "5px" }}>
+              {heroHighlights.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSlideIndex(idx)}
+                  style={{
+                    width: idx === slideIndex ? "16px" : "6px",
+                    height: "5px",
+                    borderRadius: "3px",
+                    background: idx === slideIndex ? "var(--cyan)" : "rgba(255,255,255,0.2)",
+                    border: 0,
+                    padding: 0,
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+            <span style={{ fontSize: "9px", fontFamily: "var(--font-mono)", color: "var(--cyan)" }}>
+              {heroHighlights[slideIndex].tag}
+            </span>
+          </div>
         </motion.aside>
 
         <a className="scroll-cue" href="#about">

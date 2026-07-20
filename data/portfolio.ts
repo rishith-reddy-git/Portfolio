@@ -94,9 +94,9 @@ export const timelineEntries: TimelineEntry[] = [
     period: "2025",
     category: "EXPERIENCE",
     role: "Volunteer — Smart India Hackathon (SIH 2025)",
-    organization: "SREYAS INSTITUTE OF ENGINEERING & TECHNOLOGY",
-    description: "Volunteered for Smart India Hackathon (SIH 2025) hosted at Sreyas — coordinating participating teams, technical infrastructure setup, and event operations.",
-    tags: ["SIH 2025", "SMART INDIA HACKATHON", "VOLUNTEER", "HACKATHON LOGISTICS"],
+    organization: "Sreyas Institute of Engineering & Technology",
+    description: "Volunteered for Smart India Hackathon (SIH 2025) hosted at Sreyas Institute of Engineering & Technology — coordinating participating teams, technical infrastructure setup, and event operations.",
+    tags: ["SIH 2025", "SREYAS INSTITUTE OF ENGINEERING & TECHNOLOGY", "VOLUNTEER", "HACKATHON LOGISTICS"],
     icon: Users,
   },
   {
@@ -112,11 +112,42 @@ export const timelineEntries: TimelineEntry[] = [
     period: "2024 — PRESENT",
     category: "EDUCATION",
     role: "B.Tech in Computer Science & Engineering",
-    organization: "ENGINEERING UNIVERSITY / COLLEGE",
+    organization: "Sreyas Institute of Engineering & Technology",
     description: "Specializing in Data Science, Artificial Intelligence, Software Engineering, and Database Management Systems with a focus on practical full-stack projects.",
     tags: ["COMPUTER SCIENCE", "AI & ML", "FULL STACK", "DATA STRUCTURES"],
     icon: GraduationCap,
   },
+];
+
+export const heroHighlights = [
+  {
+    badge: "MENTORSHIP HIGHLIGHT",
+    stat: "50+ Students",
+    title: "Technical Student FDT Mentor",
+    copy: "Mentored 50+ students across full-stack development, code reviews, and project implementation.",
+    tag: "FDT MENTOR"
+  },
+  {
+    badge: "PROJECT METRIC",
+    stat: "5+ Projects",
+    title: "Full-Stack Project Guidance",
+    copy: "Guided 5+ student software projects from initial architecture to live deployment.",
+    tag: "FULL STACK"
+  },
+  {
+    badge: "INCUBATION HIGHLIGHT",
+    stat: "2026 Cohort",
+    title: "NASSCOM thingQubator Program",
+    copy: "Selected for the prestigious NASSCOM thingQubator innovation and incubation program.",
+    tag: "NASSCOM"
+  },
+  {
+    badge: "FEATURED AI WORK",
+    stat: "MANOVRA",
+    title: "AI Behaviour Prediction Engine",
+    copy: "Real-time telemetry and predictive ML dashboard built with Python, ML, and React.",
+    tag: "AI / ML"
+  }
 ];
 
 export const projects: Project[] = [
