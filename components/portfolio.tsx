@@ -306,7 +306,7 @@ export function Portfolio() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               style={{ margin: "10px 0" }}
             >
-              <div style={{ display: "flex", alignItems: "center", justify: "space-between", gap: "12px", marginBottom: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", marginBottom: "8px" }}>
                 <span
                   style={{
                     fontSize: "10px",
