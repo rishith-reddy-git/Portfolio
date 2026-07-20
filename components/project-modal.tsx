@@ -162,16 +162,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <span>GitHub Repository</span>
               </a>
 
-              <a
-                href={`https://vercel.com/new/clone?repository-url=${encodeURIComponent(project.githubUrl)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="primary-button"
-                style={{ padding: "9px 16px", fontSize: "12px", gap: "8px", textDecoration: "none" }}
-              >
-                <span>🚀 Deploy Project</span>
-                <ArrowUpRight size={15} />
-              </a>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                  style={{ padding: "9px 16px", fontSize: "12px", gap: "8px", textDecoration: "none" }}
+                >
+                  <span>Open Live App (Render)</span>
+                  <ArrowUpRight size={15} />
+                </a>
+              )}
             </div>
           </motion.div>
         </motion.div>

@@ -308,13 +308,18 @@ export function Portfolio() {
                   ))}
                 </div>
                 <div style={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "16px", flexWrap: "wrap" }}>
-                  <button
-                    onClick={() => setActiveProject(project)}
-                    className="primary-button"
-                    style={{ padding: "7px 14px", fontSize: "11px", border: 0, cursor: "pointer" }}
-                  >
-                    View Details <ArrowUpRight size={14} />
-                  </button>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="primary-button"
+                      style={{ padding: "7px 14px", fontSize: "11px", textDecoration: "none" }}
+                    >
+                      <span>Live Demo (Render)</span>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
                   <a
                     href={project.githubUrl}
                     target="_blank"
@@ -324,25 +329,23 @@ export function Portfolio() {
                   >
                     <Github size={14} /> GitHub Repo
                   </a>
-                  <a
-                    href={`https://vercel.com/new/clone?repository-url=${encodeURIComponent(project.githubUrl)}`}
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    onClick={() => setActiveProject(project)}
                     style={{
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      display: "inline-flex",
-                      gap: "6px",
-                      alignItems: "center",
-                      color: "#000",
-                      background: "#fff",
+                      background: "transparent",
+                      border: "1px solid var(--line)",
+                      color: "#9da6b9",
                       padding: "6px 12px",
                       borderRadius: "6px",
+                      fontSize: "11px",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
                     }}
                   >
-                    <span>🚀 Deploy Project</span>
-                  </a>
+                    View Specs
+                  </button>
                 </div>
               </div>
             </motion.article>
