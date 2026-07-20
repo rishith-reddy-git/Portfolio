@@ -21,7 +21,7 @@ export type Focus = { icon: LucideIcon; title: string; copy: string };
 
 export type TimelineEntry = {
   period: string;
-  category: "LEADERSHIP" | "EDUCATION" | "ACHIEVEMENT";
+  category: "LEADERSHIP" | "EDUCATION" | "ACHIEVEMENT" | "EXPERIENCE";
   role: string;
   organization: string;
   description: string;
@@ -64,8 +64,8 @@ export const skillGroups: SkillGroup[] = [
 
 export const timelineEntries: TimelineEntry[] = [
   {
-    period: "2024 — PRESENT",
-    category: "ACHIEVEMENT",
+    period: "2026 — PRESENT",
+    category: "EXPERIENCE",
     role: "Selected Cohort Member",
     organization: "NASSCOM thingQubator PROGRAM",
     description: "Selected for the prestigious NASSCOM thingQubator innovation and incubation program — focusing on product development, AI prototyping, and startup mentoring.",
@@ -74,7 +74,7 @@ export const timelineEntries: TimelineEntry[] = [
   },
   {
     period: "PRESENT",
-    category: "ACHIEVEMENT",
+    category: "EXPERIENCE",
     role: "Technical Student FDT Mentor",
     organization: "FDT MENTORSHIP PROGRAM",
     description: "Serving as a Technical Student FDT Mentor — mentored 50+ students across 5+ real-world full-stack software projects, guiding them through architecture, code reviews, and deployment workflows.",
@@ -83,7 +83,7 @@ export const timelineEntries: TimelineEntry[] = [
   },
   {
     period: "2026",
-    category: "LEADERSHIP",
+    category: "EXPERIENCE",
     role: "Volunteer — TEDx Sreyas 2026",
     organization: "TEDx SREYAS",
     description: "Volunteered for TEDx Sreyas 2026 — supporting stage logistics, speaker operations, visual media production, and attendee experience.",
@@ -92,7 +92,7 @@ export const timelineEntries: TimelineEntry[] = [
   },
   {
     period: "2025",
-    category: "LEADERSHIP",
+    category: "EXPERIENCE",
     role: "Volunteer — Smart India Hackathon (SIH 2025)",
     organization: "SREYAS INSTITUTE OF ENGINEERING & TECHNOLOGY",
     description: "Volunteered for Smart India Hackathon (SIH 2025) hosted at Sreyas — coordinating participating teams, technical infrastructure setup, and event operations.",
@@ -211,7 +211,7 @@ export const resumeData: ResumeSection[] = [
     items: [
       {
         heading: "Selected Cohort Member — NASSCOM thingQubator Program",
-        period: "2024 — Present",
+        period: "2026 — Present",
         details: [
           "Currently selected for the prestigious NASSCOM thingQubator program focusing on AI prototyping, innovation, and startup incubation."
         ]
