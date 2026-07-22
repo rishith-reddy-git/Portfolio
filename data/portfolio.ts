@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BrainCircuit, Camera, Code2, Cpu, Database, Palette, Sparkles, Users, GraduationCap, Trophy, Briefcase } from "lucide-react";
+import { BrainCircuit, Camera, Code2, Cpu, Database, Palette, Sparkles, Users, GraduationCap, Trophy, Briefcase, BookOpen, Award } from "lucide-react";
 
 export type SkillGroup = { title: string; skills: string[] };
 
@@ -46,7 +46,7 @@ export const socialLinks = {
   email: "soodinirishithreddy@gmail.com",
 };
 
-export const navigation = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
+export const navigation = ["Home", "About", "Education", "Experience", "Skills", "Projects", "Contact"];
 
 export const focusAreas: Focus[] = [
   { icon: BrainCircuit, title: "Intelligence", copy: "Machine learning and predictive systems that transform signals into useful decisions." },
@@ -204,17 +204,82 @@ export const values = [
   { icon: Sparkles, text: "Continuous learning" },
 ];
 
+export const educationEntries = [
+  {
+    degree: "B.Tech in Computer Science & Engineering",
+    institution: "Sreyas Institute of Engineering & Technology",
+    period: "2024 — Present",
+    grade: "Pursuing",
+    gradeLabel: "Degree Status",
+    badgeColor: "#a78bfa",
+    accentGlow: "rgba(167, 139, 250, 0.18)",
+    highlights: [
+      "Specializing in Artificial Intelligence, Machine Learning, Data Science & Full-Stack Systems",
+      "Lead at Center for Innovation & Entrepreneurship (CIE)",
+      "Technical Student FDT Mentor & NASSCOM thingQubator Innovator"
+    ],
+    icon: GraduationCap,
+  },
+  {
+    degree: "Intermediate (Class XII - MPC)",
+    institution: "Sri Chaitanya Junior Kalasala",
+    period: "2022 — 2024",
+    grade: "89.4%",
+    gradeLabel: "Final Score",
+    badgeColor: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.18)",
+    highlights: [
+      "Major in Mathematics, Physics & Chemistry (MPC)",
+      "Built a strong foundation in Quantitative Analysis, Calculus, and Logic"
+    ],
+    icon: BookOpen,
+  },
+  {
+    degree: "Secondary School Certificate (Class X)",
+    institution: "Sri Chaitanya School",
+    period: "2021 — 2022",
+    grade: "9.5 CGPA",
+    gradeLabel: "Grade Point",
+    badgeColor: "#34d399",
+    accentGlow: "rgba(52, 211, 153, 0.18)",
+    highlights: [
+      "Achieved outstanding academic standing of 9.5 / 10.0 CGPA",
+      "Excellence in Mathematics, Science, and Computer Fundamentals"
+    ],
+    icon: Award,
+  },
+];
+
 export const resumeData: ResumeSection[] = [
   {
     title: "Education",
     items: [
       {
         heading: "B.Tech in Computer Science & Engineering",
-        subheading: "Focus on AI, Data Science & Full-Stack Development",
+        subheading: "Sreyas Institute of Engineering & Technology",
         period: "2024 — Present",
         details: [
-          "Relevant Coursework: Machine Learning, Data Structures & Algorithms, Database Systems, Web Development, Object-Oriented Programming.",
+          "Specializing in AI, Data Science & Full-Stack Development.",
+          "Relevant Coursework: Machine Learning, Data Structures & Algorithms, Database Systems, Web Development.",
           "Active leader at the Center for Innovation & Entrepreneurship (CIE)."
+        ]
+      },
+      {
+        heading: "Intermediate (Class XII - MPC)",
+        subheading: "Sri Chaitanya Junior Kalasala",
+        period: "2022 — 2024",
+        details: [
+          "Percentage: 89.4%",
+          "Focused on Mathematics, Physics, and Chemistry (MPC)."
+        ]
+      },
+      {
+        heading: "Secondary School Certificate (Class X)",
+        subheading: "Sri Chaitanya School",
+        period: "2021 — 2022",
+        details: [
+          "CGPA: 9.5 / 10.0",
+          "Completed secondary education with distinction in science and mathematics."
         ]
       }
     ]

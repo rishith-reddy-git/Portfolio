@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Check, ChevronLeft, ChevronRight, Command, Github, Instagram, Linkedin, Mail, Menu, Send, Sparkles, X } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
-import { focusAreas, heroHighlights, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project } from "../data/portfolio";
+import { focusAreas, heroHighlights, navigation, projects, skillGroups, stats, timelineEntries, values, socialLinks, Project, educationEntries } from "../data/portfolio";
 import { ResumeModal } from "./resume-modal";
 import { ProjectModal } from "./project-modal";
 
@@ -437,9 +437,84 @@ export function Portfolio() {
         </div>
       </section>
 
+      {/* Education Aisle Section */}
+      <section id="education" className="section education" style={{ borderBottom: "1px solid var(--line)", background: "rgba(255,255,255,0.01)" }}>
+        <SectionTitle eyebrow="02 / ACADEMIC AISLE" title="Student life &" emphasis="academic grades." />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "55px" }}>
+          {educationEntries.map((edu, index) => {
+            const Icon = edu.icon;
+            return (
+              <motion.article
+                key={edu.degree}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={reveal}
+                transition={{ delay: index * 0.1 }}
+                style={{
+                  background: `radial-gradient(circle at 90% 10%, ${edu.accentGlow}, transparent 70%), rgba(255, 255, 255, 0.03)`,
+                  backdropFilter: "blur(20px)",
+                  borderRadius: "16px",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  padding: "26px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  transition: "transform 0.3s, border-color 0.3s",
+                }}
+              >
+                <div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: "10px", padding: "8px", display: "flex" }}>
+                        <Icon size={20} style={{ color: edu.badgeColor }} />
+                      </div>
+                      <span style={{ fontSize: "11px", fontFamily: "var(--font-mono)", color: "var(--muted)" }}>
+                        {edu.period}
+                      </span>
+                    </div>
+                    <div style={{ background: "rgba(255,255,255,0.08)", border: `1px solid ${edu.badgeColor}`, borderRadius: "20px", padding: "4px 12px", textAlign: "center" }}>
+                      <span style={{ fontSize: "12px", fontWeight: 800, color: edu.badgeColor, fontFamily: "var(--font-space)" }}>
+                        {edu.grade}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, margin: "0 0 6px", color: "#ffffff", letterSpacing: "-0.5px" }}>
+                    {edu.degree}
+                  </h3>
+
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: edu.badgeColor, margin: "0 0 16px" }}>
+                    {edu.institution}
+                  </p>
+
+                  <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "14px", display: "flex", flexDirection: "column", gap: "8px" }}>
+                    {edu.highlights.map((item) => (
+                      <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "12px", color: "#cbd5e1", lineHeight: "1.5" }}>
+                        <span style={{ color: edu.badgeColor, fontWeight: 700 }}>•</span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ marginTop: "20px", paddingTop: "12px", borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: "10px", fontFamily: "var(--font-mono)", color: "var(--muted)", textTransform: "uppercase" }}>
+                    {edu.gradeLabel}
+                  </span>
+                  <span style={{ fontSize: "11px", fontWeight: 700, color: edu.badgeColor, fontFamily: "var(--font-space)" }}>
+                    {edu.grade}
+                  </span>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Experience & Timeline Section */}
       <section id="experience" className="section experience">
-        <SectionTitle eyebrow="02 / EXPERIENCE & JOURNEY" title="Making innovation" emphasis="visible." />
+        <SectionTitle eyebrow="03 / EXPERIENCE & JOURNEY" title="Making innovation" emphasis="visible." />
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
           {timelineEntries.map((entry, index) => {
             const Icon = entry.icon;
@@ -473,7 +548,7 @@ export function Portfolio() {
 
       {/* Skills Toolkit Section */}
       <section id="skills" className="section skills">
-        <SectionTitle eyebrow="03 / TOOLKIT" title="Comfortable with complexity." emphasis="Curious about everything." />
+        <SectionTitle eyebrow="04 / TOOLKIT" title="Comfortable with complexity." emphasis="Curious about everything." />
         <div className="skills-grid">
           {skillGroups.map((group, index) => (
             <motion.article key={group.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: index * 0.06 }}>
@@ -491,7 +566,7 @@ export function Portfolio() {
 
       {/* Projects Section */}
       <section id="projects" className="section projects">
-        <SectionTitle eyebrow="04 / SELECTED WORK" title="Ideas, built into" emphasis="impact." />
+        <SectionTitle eyebrow="05 / SELECTED WORK" title="Ideas, built into" emphasis="impact." />
         <div className="project-grid" style={{ gridTemplateColumns: "1fr" }}>
           {projects.map((project, index) => (
             <motion.article
@@ -569,7 +644,7 @@ export function Portfolio() {
       {/* Focus / Impact Section */}
       <section className="section impact">
         <p className="eyebrow">
-          <span />05 / MOMENTUM
+          <span />06 / MOMENTUM
         </p>
         <div>
           {focusAreas.map(({ icon: Icon, title, copy }) => (
@@ -584,7 +659,7 @@ export function Portfolio() {
 
       {/* Contact Section */}
       <section id="contact" className="section contact">
-        <SectionTitle eyebrow="06 / CONTACT" title="Have an idea worth" emphasis="making?" />
+        <SectionTitle eyebrow="07 / CONTACT" title="Have an idea worth" emphasis="making?" />
         <div className="contact-layout">
           <div>
             <p>Open to thoughtful conversations, ambitious collaborations, and problems worth solving.</p>
