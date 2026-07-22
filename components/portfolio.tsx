@@ -641,25 +641,9 @@ export function Portfolio() {
         </div>
       </section>
 
-      {/* Focus / Impact Section */}
-      <section className="section impact">
-        <p className="eyebrow">
-          <span />06 / MOMENTUM
-        </p>
-        <div>
-          {focusAreas.map(({ icon: Icon, title, copy }) => (
-            <motion.article key={title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
-              <Icon size={24} />
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </motion.article>
-          ))}
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="section contact">
-        <SectionTitle eyebrow="07 / CONTACT" title="Have an idea worth" emphasis="making?" />
+        <SectionTitle eyebrow="06 / CONTACT" title="Have an idea worth" emphasis="making?" />
         <div className="contact-layout">
           <div>
             <p>Open to thoughtful conversations, ambitious collaborations, and problems worth solving.</p>
