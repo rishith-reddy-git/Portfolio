@@ -118,8 +118,8 @@ export const heroHighlights = [
     title: "Technical Student FDT Mentor",
     copy: "Mentored 50+ students across full-stack development, code reviews, software architecture, and live project implementation.",
     tag: "FDT MENTOR",
-    color: "#a78bfa",
-    accentGlow: "rgba(167, 139, 250, 0.18)",
+    color: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.22)",
     actionText: "View Mentorship Specs",
     targetId: "experience"
   },
@@ -130,8 +130,8 @@ export const heroHighlights = [
     title: "Full-Stack Project Guidance",
     copy: "Guided 5+ student software projects from initial concept and UI design to production deployment.",
     tag: "FULL STACK",
-    color: "#38bdf8",
-    accentGlow: "rgba(56, 189, 248, 0.18)",
+    color: "#ef4444",
+    accentGlow: "rgba(239, 68, 68, 0.22)",
     actionText: "Explore Projects",
     targetId: "projects"
   },
@@ -142,8 +142,8 @@ export const heroHighlights = [
     title: "NASSCOM thingQubator Program",
     copy: "Selected for the prestigious NASSCOM thingQubator innovation and incubation program.",
     tag: "NASSCOM",
-    color: "#f43f5e",
-    accentGlow: "rgba(244, 63, 94, 0.18)",
+    color: "#ef4444",
+    accentGlow: "rgba(239, 68, 68, 0.22)",
     actionText: "View Journey",
     targetId: "experience"
   },
@@ -154,8 +154,8 @@ export const heroHighlights = [
     title: "AI Behaviour Prediction Engine",
     copy: "Real-time telemetry and predictive ML dashboard built with Python, ML, and React.",
     tag: "AI / ML",
-    color: "#34d399",
-    accentGlow: "rgba(52, 211, 153, 0.18)",
+    color: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.22)",
     actionText: "Open MANOVRA",
     targetId: "projects"
   }
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     type: "AI / Predictive analytics",
     summary: "An AI-powered behaviour prediction engine that reveals patterns, visualizes trends, and supports confident data-driven decisions.",
     tags: ["Python", "Analytics", "ML"],
-    accent: "violet",
+    accent: "blue",
     githubUrl: "https://github.com/rishith-reddy-git/Manovra_behaviour_prediction",
     demoUrl: "https://manovra-behaviour-prediction.onrender.com",
     description: "MANOVRA is a predictive engine designed to process complex behavioural data signals, compute trend vectors, and present real-time actionable intelligence dashboards.",
@@ -202,8 +202,8 @@ export const educationEntries = [
     period: "2024 — Present",
     grade: "Pursuing",
     gradeLabel: "Degree Status",
-    badgeColor: "#a78bfa",
-    accentGlow: "rgba(167, 139, 250, 0.18)",
+    badgeColor: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.2)",
     highlights: [
       "Specializing in Artificial Intelligence, Machine Learning, Data Science & Full-Stack Systems",
       "Lead at Center for Innovation & Entrepreneurship (CIE)",
@@ -217,8 +217,8 @@ export const educationEntries = [
     period: "2022 — 2024",
     grade: "89.4%",
     gradeLabel: "Final Score",
-    badgeColor: "#38bdf8",
-    accentGlow: "rgba(56, 189, 248, 0.18)",
+    badgeColor: "#ef4444",
+    accentGlow: "rgba(239, 68, 68, 0.2)",
     highlights: [
       "Major in Mathematics, Physics & Chemistry (MPC)",
       "Built a strong foundation in Quantitative Analysis, Calculus, and Logic"
@@ -231,8 +231,8 @@ export const educationEntries = [
     period: "2021 — 2022",
     grade: "9.5 CGPA",
     gradeLabel: "Grade Point",
-    badgeColor: "#34d399",
-    accentGlow: "rgba(52, 211, 153, 0.18)",
+    badgeColor: "#38bdf8",
+    accentGlow: "rgba(56, 189, 248, 0.2)",
     highlights: [
       "Achieved outstanding academic standing of 9.5 / 10.0 CGPA",
       "Excellence in Mathematics, Science, and Computer Fundamentals"

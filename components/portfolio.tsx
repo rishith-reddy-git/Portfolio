@@ -658,7 +658,7 @@ export function Portfolio() {
                   background: "rgba(255,255,255,0.06)",
                   border: "1px solid var(--line)",
                   borderRadius: "6px",
-                  color: copiedEmail ? "#4ade80" : "#d5dbe7",
+                  color: copiedEmail ? "#38bdf8" : "#d5dbe7",
                   padding: "6px 12px",
                   fontSize: "11px",
                   cursor: "pointer",
