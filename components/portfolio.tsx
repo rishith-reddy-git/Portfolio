@@ -446,11 +446,13 @@ export function Portfolio() {
             return (
               <motion.div key={entry.role} className="timeline" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: index * 0.1 }}>
                 <div className="timeline-meta">
-                  <span>{entry.period}</span>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <i style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--cyan)", boxShadow: "0 0 12px var(--cyan)", display: "inline-block", flexShrink: 0 }} />
+                    <span>{entry.period}</span>
+                  </div>
                   <small>{entry.category}</small>
                 </div>
                 <div className="timeline-content">
-                  <i className="timeline-dot" />
                   <p className="label">{entry.organization}</p>
                   <h3 style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <Icon size={24} style={{ color: "var(--cyan)" }} />
