@@ -177,26 +177,26 @@ export function Portfolio() {
         <div className="hero-grid" />
         <div className="cursor-glow" />
         <motion.div className="hero-copy" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.12 } } }}>
-          <motion.p variants={reveal} className="availability" style={{ letterSpacing: "2px", fontWeight: 700, color: "#38bdf8" }}>
-            <i style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#ef4444", boxShadow: "0 0 14px #ef4444", display: "inline-block" }} />
-            SYSTEM OPERATIONAL // OPEN TO AMBITIOUS ROLES
+          <motion.p variants={reveal} className="availability">
+            <i style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#38bdf8", boxShadow: "0 0 12px #38bdf8", display: "inline-block" }} />
+            Available for ambitious opportunities
           </motion.p>
-          <motion.p variants={reveal} className="hero-kicker" style={{ color: "#ef4444", fontWeight: 700, letterSpacing: "6px" }}>
-            SOODINI //
+          <motion.p variants={reveal} className="hero-kicker" style={{ color: "#ef4444", fontWeight: 700, letterSpacing: "5px" }}>
+            SOODINI
           </motion.p>
-          <motion.h1 variants={reveal} style={{ textTransform: "uppercase" }}>
+          <motion.h1 variants={reveal}>
             RISHITH<br />
-            <span style={{ color: "transparent", WebkitTextStroke: "1.5px #38bdf8" }}>REDDY</span>
+            <span style={{ color: "#38bdf8" }}>REDDY</span>
           </motion.h1>
-          <motion.p variants={reveal} className="hero-role" style={{ fontSize: "13px", letterSpacing: "1px", fontWeight: 700, color: "#f8fafc" }}>
-            AI SYSTEMS DEVELOPER <b style={{ color: "#ef4444" }}>//</b> FULL STACK ARCHITECT <b style={{ color: "#ef4444" }}>//</b> CREATIVE LEADER
+          <motion.p variants={reveal} className="hero-role" style={{ fontSize: "14px", letterSpacing: "0.5px", fontWeight: 600, color: "#e2e8f0" }}>
+            AI Developer <b style={{ color: "#ef4444", padding: "0 4px" }}>•</b> Full Stack Developer <b style={{ color: "#ef4444", padding: "0 4px" }}>•</b> Creative Technologist
           </motion.p>
-          <motion.p variants={reveal} className="hero-description" style={{ color: "#cbd5e1", fontSize: "15px", lineHeight: "1.75" }}>
-            Architecting intelligent predictive software, engineering high-throughput digital systems, and leading technical innovation with relentless execution.
+          <motion.p variants={reveal} className="hero-description" style={{ color: "#94a3b8", fontSize: "15px", lineHeight: "1.75" }}>
+            Building intelligent software, creating impactful digital experiences, and leading innovation through technology.
           </motion.p>
           <motion.div variants={reveal} className="hero-buttons" style={{ flexWrap: "wrap" }}>
-            <a className="primary-button" href="#projects" style={{ background: "#ef4444", color: "#ffffff", border: "none", boxShadow: "0 0 25px rgba(239, 68, 68, 0.4)", padding: "12px 20px" }}>
-              EXPLORE DEPLOYMENTS <ArrowDown size={16} />
+            <a className="primary-button" href="#projects">
+              Explore Projects <ArrowDown size={16} />
             </a>
             <button className="quiet-button" onClick={() => setResumeOpen(true)} style={{ background: "transparent", border: 0, color: "inherit", cursor: "pointer" }}>
               View Résumé <ArrowUpRight size={15} />
@@ -403,7 +403,7 @@ export function Portfolio() {
 
       {/* About Section */}
       <section id="about" className="section about">
-        <SectionTitle eyebrow="// 01 ARCHITECTURE & VISION" title="A technologist with" emphasis="a creative eye." />
+        <SectionTitle eyebrow="01 / ABOUT" title="A technologist with" emphasis="a creative eye." />
         <div className="about-layout">
           <motion.div className="portrait-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal}>
             <div className="portrait-monogram">SRR</div>
@@ -440,7 +440,7 @@ export function Portfolio() {
 
       {/* Education Aisle Section */}
       <section id="education" className="section education" style={{ borderBottom: "1px solid var(--line)", background: "rgba(255,255,255,0.01)" }}>
-        <SectionTitle eyebrow="// 02 ACADEMIC AISLE" title="Student life &" emphasis="academic grades." />
+        <SectionTitle eyebrow="02 / ACADEMIC AISLE" title="Student life &" emphasis="academic grades." />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "55px" }}>
           {educationEntries.map((edu, index) => {
             const Icon = edu.icon;
@@ -515,7 +515,7 @@ export function Portfolio() {
 
       {/* Experience & Timeline Section */}
       <section id="experience" className="section experience">
-        <SectionTitle eyebrow="// 03 EXECUTIVE EXPERIENCE" title="Making innovation" emphasis="visible." />
+        <SectionTitle eyebrow="03 / EXPERIENCE" title="Making innovation" emphasis="visible." />
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
           {timelineEntries.map((entry, index) => {
             const Icon = entry.icon;
@@ -549,7 +549,7 @@ export function Portfolio() {
 
       {/* Skills Toolkit Section */}
       <section id="skills" className="section skills">
-        <SectionTitle eyebrow="// 04 TECHNICAL CAPABILITIES" title="Comfortable with complexity." emphasis="Curious about everything." />
+        <SectionTitle eyebrow="04 / TOOLKIT" title="Comfortable with complexity." emphasis="Curious about everything." />
         <div className="skills-grid">
           {skillGroups.map((group, index) => (
             <motion.article key={group.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={reveal} transition={{ delay: index * 0.06 }}>
@@ -567,7 +567,7 @@ export function Portfolio() {
 
       {/* Projects Section */}
       <section id="projects" className="section projects">
-        <SectionTitle eyebrow="// 05 PRODUCTION DEPLOYMENTS" title="Ideas, built into" emphasis="impact." />
+        <SectionTitle eyebrow="05 / SELECTED WORK" title="Ideas, built into" emphasis="impact." />
         <div className="project-grid" style={{ gridTemplateColumns: "1fr" }}>
           {projects.map((project, index) => (
             <motion.article
@@ -644,7 +644,7 @@ export function Portfolio() {
 
       {/* Contact Section */}
       <section id="contact" className="section contact">
-        <SectionTitle eyebrow="// 06 DIRECT CONTACT" title="Have an idea worth" emphasis="making?" />
+        <SectionTitle eyebrow="06 / CONTACT" title="Have an idea worth" emphasis="making?" />
         <div className="contact-layout">
           <div>
             <p>Open to thoughtful conversations, ambitious collaborations, and problems worth solving.</p>
