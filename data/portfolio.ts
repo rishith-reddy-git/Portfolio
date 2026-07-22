@@ -108,15 +108,6 @@ export const timelineEntries: TimelineEntry[] = [
     tags: ["CREATIVE DIRECTION", "EVENT MEDIA", "TEAM LEADERSHIP", "BRANDING"],
     icon: Briefcase,
   },
-  {
-    period: "2024 — PRESENT",
-    category: "EDUCATION",
-    role: "B.Tech in Computer Science & Engineering",
-    organization: "Sreyas Institute of Engineering & Technology",
-    description: "Specializing in Data Science, Artificial Intelligence, Software Engineering, and Database Management Systems with a focus on practical full-stack projects.",
-    tags: ["COMPUTER SCIENCE", "AI & ML", "FULL STACK", "DATA STRUCTURES"],
-    icon: GraduationCap,
-  },
 ];
 
 export const heroHighlights = [
